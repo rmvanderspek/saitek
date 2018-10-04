@@ -69,9 +69,10 @@ function init() {
     }
 
     if (_.isUndefined(deviceFound)) {
-        return log.error(chalk.red('%s was not found as a connected HID device'), productName);
+        log.error(chalk.red('%s was not found as a connected HID device'), productName);
+        process.exit(0);
     } else {
-        return log.info(chalk.green('%s was found as a connected HID device'), productName);
+        log.info(chalk.green('%s was found as a connected HID device'), productName);
     }
 }
 
